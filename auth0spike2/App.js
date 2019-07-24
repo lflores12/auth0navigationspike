@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font } from 'expo';
 import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation'

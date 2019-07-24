@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity, Dimensions } from 'react-native';
  
 export default class MainView extends Component {
   static navigationOptions = () => {
@@ -13,8 +13,10 @@ export default class MainView extends Component {
     return (
         <View style={styles.container}>
         <View style={styles.logoContainer}>
-          <Image style ={styles.logo}
+          <Image 
+          style ={styles.logo}
           source = {require('./assets/keyFullBlack.png')}
+          resizeMode='cover'
           />
         </View>
         <View style={styles.textContainer}>
@@ -46,6 +48,10 @@ export default class MainView extends Component {
     );
   }
 }
+
+const { width } = Dimensions.get('window')
+
+
 const styles = StyleSheet.create({
   container: {
     // marginTop: 50,
@@ -56,24 +62,17 @@ const styles = StyleSheet.create({
     // height: 667,
     // width: 375
   },
-  button: {
-    // margin: 50,  
-    justifyContent: "center",
-    alignItems: 'center'
-  },
   logo: {
-    height: 189,
-    width: 189
+    width: width * 0.7,
+    height: width * 0.7
   },
   logoContainer: {
-    flex: 2,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
   },
   textContainer: {
-    flex: 1,
-    // marginTop: 20,
-    // marginBottom: 20,
+    height: '10%',
     justifyContent: "center",
     alignItems: 'center'
   },
@@ -83,12 +82,12 @@ const styles = StyleSheet.create({
     // marginTop: 64
   },
   buttons: {
-    flex: 1,
+    height: 200,
     alignItems: 'center',
-    paddingBottom: '2.5%',
-    // marginBottom: 50,
-    // marginTop: 50,
-    width: '90%'
+    width: '100%',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    padding: '5%'
   },
   buttonContainer: {
     width: '100%',
